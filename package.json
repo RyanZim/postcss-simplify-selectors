@@ -1,0 +1,35 @@
+{
+  "name": "postcss-simplify-selectors",
+  "version": "0.0.0",
+  "description": "Postcss plugin to simplify nested selectors.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "selectors",
+    "optimize",
+    "simplify"
+  ],
+  "author": "Ryan Zimmerman <opensrc@ryanzim.com>",
+  "bugs": "https://github.com/RyanZim/postcss-simplify-selectors/issues",
+  "homepage": "https://github.com/RyanZim/postcss-simplify-selectors#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanZim/postcss-simplify-selectors.git"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "fs-promise": "^1.0.0",
+    "globby": "^6.1.0",
+    "hasha": "^2.2.0",
+    "jsdom": "^9.9.1",
+    "postcss": "^5.2.11"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "tempfile": "^1.1.1"
+  }
+}
