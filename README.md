@@ -1,16 +1,6 @@
 # postcss-simplify-selectors
 
-Did you ever wish you could write CSS like this:
-
-```css
-.grid p {
-  margin-bottom: 0;
-}
-```
-
-Without the performance impacts of nested CSS selectors? Well now you can!
-
-(If you're not familiar with CSS selector performance, see https://smacss.com/book/selectors for a crash course.)
+[Postcss](https://github.com/postcss/postcss) plugin to simplify nested selectors.
 
 ## Example
 
@@ -25,6 +15,12 @@ Without the performance impacts of nested CSS selectors? Well now you can!
 ```
 
 ```css
+.grid {
+  display: flex;
+}
+.grid > div {
+  flex-basis: 50%;
+}
 .grid p {
   margin-bottom: 0;
 }
@@ -34,13 +30,19 @@ Without the performance impacts of nested CSS selectors? Well now you can!
 
 ```html
 <div class="grid">
-  <div>
+  <div class="_a9c6b">
     <p class="_55267">Hello  World!</p>
   </div>
 </div>
 ```
 
 ```css
+.grid {
+  display: flex;
+}
+._a9c6b {
+  flex-basis: 50%;
+}
 ._55267 {
   margin-bottom: 0;
 }
@@ -51,8 +53,6 @@ Without the performance impacts of nested CSS selectors? Well now you can!
 ```bash
 npm install postcss-simplify-selectors
 ```
-
-This is a [postcss](https://github.com/postcss/postcss) plugin.
 
 ## Usage
 
