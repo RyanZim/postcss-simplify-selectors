@@ -13,9 +13,9 @@ test('simplifies descendant selectors', async function (t) {
   var hash = getHash('div p');
   await fs.copy('test/fixtures/div-div-p.html', html);
   var { css } = await plugin.process('div p { color: red }', { html });
-  t.is(css, `${hash} { color: red }`)
+  t.is(css, `._${hash} { color: red }`)
   var outputHTML = await fs.readFile(html, 'utf8');
-  t.truthy(outputHTML.indexOf(`<p class="${hash}">`));
+  t.truthy(outputHTML.indexOf(`<p class="_${hash}">`));
 });
 
 test('simplifies child selectors', async function (t) {
@@ -23,9 +23,9 @@ test('simplifies child selectors', async function (t) {
   var hash = getHash('div > div');
   await fs.copy('test/fixtures/div-div-p.html', html);
   var { css } = await plugin.process('div > div { color: red }', { html });
-  t.is(css, `${hash} { color: red }`)
+  t.is(css, `._${hash} { color: red }`)
   var outputHTML = await fs.readFile(html, 'utf8');
-  t.truthy(outputHTML.indexOf(`<div class="${hash}">`));
+  t.truthy(outputHTML.indexOf(`<div class="_${hash}">`));
 });
 
 test("doesn't touch other selectors", async function (t) {

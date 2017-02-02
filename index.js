@@ -45,9 +45,9 @@ function checkHTML(selector, documents) {
     if (elems.length) {
       if (!hash) hash = hasha(selector).substr(0, 5);
       for (var i = 0; i < elems.length; i++) {
-        elems[i].classList.add(hash);
+        elems[i].classList.add('_' + hash);
       }
     }
   })
-  return hash || selector;
+  return hash ? '._' + hash : selector;
 }
