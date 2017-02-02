@@ -1,6 +1,6 @@
 {
   "name": "postcss-simplify-selectors",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Postcss plugin to simplify nested selectors.",
   "keywords": [
     "postcss",
